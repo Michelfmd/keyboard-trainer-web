@@ -1,3 +1,5 @@
+import { AppProvider } from "../components/app-provider";
+import "./globals.css";
 export const metadata = {
   title: "Keyboard Trainer Web",
 };
@@ -9,7 +11,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }

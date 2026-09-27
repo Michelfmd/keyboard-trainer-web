@@ -6,3 +6,4 @@ export * from "./chords";
 export * from "./chord-metrics";
 export * from "./laptop-chord-metrics";
 export * from "./keyboard-layout";
+export * from "./random";

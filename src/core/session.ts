@@ -10,6 +10,7 @@ export interface Session<EventT extends EventType> {
   readonly endedAt: number | null;
   readonly lastInputAt: number | null;
   readonly elapsedTime: number;
+  readonly clock: Clock;
   start(): void;
   record(expectedKey: string, pressedKey: string): InputEvent;
   addEvent(event: EventT): void;
@@ -47,6 +48,9 @@ function createSession<EventT extends EventType>(
       }
       const end = endedAt ?? clock();
       return Math.max(0, end - startedAt);
+    },
+    get clock() {
+      return clock;
     },
     start() {
       events = [];
